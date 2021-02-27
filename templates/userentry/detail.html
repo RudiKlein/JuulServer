@@ -12,20 +12,20 @@
 <body>
 
 <img src="/static/hu.png" alt="" width="100" height="104" align="left"/> <H1 class="Sans">Sportief tijdens Corona</H1>
-<H1 class="Sans">Score </H1>
+<H1 class="Sans">Score overzicht</H1>
 <hr>
 
-<h1>{{ question.question_text }}</h1>
+<h1>{{ persoonsgegevens.emailadres }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'polls:vote' question.id %}" method="post">
+{% comment %}<form action="{% url 'userentry:Selecteer' question.id %}" method="post">
 {% csrf_token %}
 {% for choice in question.choice_set.all %}
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
 {% endfor %}
 <input type="submit" value="Vote">
-</form>
+</form>{% endcomment %}
 </body>
 </html>
