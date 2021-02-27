@@ -39,7 +39,7 @@ class Doelstellingen(models.Model):
     activiteiten = models.ForeignKey(Activiteiten, on_delete=models.CASCADE, default=0)
     persoonsgegevens = models.ForeignKey(PersoonsGegevens, on_delete=models.CASCADE, default=0)
     # optional = models.CharField(max_length=45, default='')
-    doelstellingen = models.IntegerField(default=0)
+    doelstelling = models.IntegerField(default=0)
 
     class Meta:
         verbose_name = 'Doelstellingen'

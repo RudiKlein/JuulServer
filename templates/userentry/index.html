@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Leaderboard</title>
+<title>Index</title>
 <style type="text/css">
 .Sans {
 	font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -12,17 +12,18 @@
 <body>
 
 <img src="/static/hu.png" alt="" width="100" height="104" align="left"/> <H1 class="Sans">Sportief tijdens Corona</H1>
-<H1 class="Sans">Score overzicht</H1>
+<H1 class="Sans">Index</H1>
 <hr>
 
 {% if latest_score_list %}
     <ul>
-    {% for emailadres in latest_score_list %}
-        <li><a href="{% url 'userentry:testme' persoonsgegevens.id %}">{{ persoonsgegevens.emailadres }}</a></li>
-    {% endfor %}
+    {% for persoonsgegevens in latest_score_list %}
+        <li><a href="{% url 'userentry:persoonsgegevens' persoonsgegevens.id %}">{{ persoonsgegevens }}</a></li>
+          {% endfor %}
     </ul>
 {% else %}
-    <p>No userentry are available.</p>
+    <p>No userentry data are available.</p>
 {% endif %}
 </body>
 </html>
+
