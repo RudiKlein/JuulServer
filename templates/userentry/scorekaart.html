@@ -15,14 +15,9 @@
 <H1 class="Sans">Scorekaart</H1>
 <hr>
 
-{% comment %}<h1>{{ question.question_text }}</h1>
+<p><img src="/static/scorekaart_1.png"  /></p>
+<p><img src="/static/scorekaart_2.png"  /></p>
+<p><img src="/static/scorekaart_3.png"  /></p>
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
-
-<a href="{% url 'userentry:detail' question.id %}">Vote again?</a>{% endcomment %}
 </body>
 </html>

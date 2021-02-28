@@ -23,7 +23,13 @@
 <li> <B>Leeftijd:</B> {{ latest_score_list.leeftijd }} </li>
 <li> <B>Lengte:</B> {{ latest_score_list.lengte }} </li>
 <li> <B>Emailadres:</B> {{ latest_score_list.emailadres }} </li>
+    &nbsp;
+    &nbsp;
+<li><a href="{% url 'userentry:doelstellingen' latest_score_list.id %}">{{ 'Doelstellingen' }}</a></li>
+<li><a href="{% url 'userentry:scorekaart' latest_score_list.id %}">{{ doelstellingen }}</a></li>
 
 </ul>
+
+
 </body>
 </html>

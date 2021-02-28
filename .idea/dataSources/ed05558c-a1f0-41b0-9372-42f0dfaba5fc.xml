@@ -1823,7 +1823,7 @@ model</ColNames>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="600" parent="181" name="doelstellingen">
+    <column id="600" parent="181" name="doelstelling">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>

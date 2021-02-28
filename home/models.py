@@ -47,7 +47,7 @@ class Doelstellingen(models.Model):
 
     def __str__(self):
         # zet de naam van de entry als blok
-        return self.persoonsgegevens.voornaam + ": " + self.activiteiten.activiteit + " " + str(self.doelstellingen) + "x"
+        return self.persoonsgegevens.voornaam + ": " + self.activiteiten.activiteit + " " + str(self.doelstelling) + "x"
 
 
 class Scorekaart(models.Model):
