@@ -16,17 +16,17 @@
 <hr>
 
 <ul>
-    <li> <B>ID:</B> {{ latest_score_list.id }} </li>
-<li> <B>Voornaam:</B> {{ latest_score_list.voornaam }} </li>
-<li> <B>Achternaam:</B> {{ latest_score_list.achternaam }} </li>
-<li> <B>Gewicht:</B> {{ latest_score_list.gewicht }} </li>
-<li> <B>Leeftijd:</B> {{ latest_score_list.leeftijd }} </li>
-<li> <B>Lengte:</B> {{ latest_score_list.lengte }} </li>
-<li> <B>Emailadres:</B> {{ latest_score_list.emailadres }} </li>
+    <li> <B>ID:</B> {{ persoonsgegevens.id }} </li>
+<li> <B>Voornaam:</B> {{ persoonsgegevens.voornaam }} </li>
+<li> <B>Achternaam:</B> {{ persoonsgegevens.achternaam }} </li>
+<li> <B>Gewicht:</B> {{ persoonsgegevens.gewicht }} </li>
+<li> <B>Leeftijd:</B> {{ persoonsgegevens.leeftijd }} </li>
+<li> <B>Lengte:</B> {{ persoonsgegevens.lengte }} </li>
+<li> <B>Emailadres:</B> {{ persoonsgegevens.emailadres }} </li>
     &nbsp;
     &nbsp;
-<li><a href="{% url 'userentry:doelstellingen' latest_score_list.id %}">{{ 'Doelstellingen' }}</a></li>
-<li><a href="{% url 'userentry:scorekaart' latest_score_list.id %}">{{ doelstellingen }}</a></li>
+<li><a href="{% url 'userentry:doelstellingen' persoonsgegevens.id %}">{{ doelstellingen}}</a></li>
+<li><a href="{% url 'userentry:scorekaart' persoonsgegevens.id %}">{{ doelstellingen }}</a></li>
 
 </ul>
 

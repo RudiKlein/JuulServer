@@ -16,20 +16,16 @@ class IndexView(generic.ListView):
         return PersoonsGegevens.objects.order_by('-emailadres')[:5]
 
 
-class DetailView(generic.DetailView):
-    model = PersoonsGegevens
-    template_name = 'userentry/persoonsgegevens.html'
-    context_object_name = 'latest_score_list'
-
-
 class PersoonsgegevensView(generic.DetailView):
     model = PersoonsGegevens
     template_name = 'userentry/persoonsgegevens.html'
-    context_object_name = 'latest_score_list'
+    context_object_name = 'persoonsgegevens'
 
     def get_context_data(self, **kwargs):
         context = super(PersoonsgegevensView, self).get_context_data(**kwargs)
-        context['doelstellingen'] = Doelstellingen.objects.order_by("-id")
+        Persoonsgegevend_id = PersoonsGegevens.objects.get(id="id")
+        FilteredData = Doelstellingen.objects.filter(persoonsgegevens_id=Persoonsgegevend_id).values_list('id', flat=True)
+        context['doelstellingen'] = FilteredData
         return context
 
 
