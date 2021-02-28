@@ -23,9 +23,7 @@ class PersoonsgegevensView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PersoonsgegevensView, self).get_context_data(**kwargs)
-        Persoonsgegevend_id = PersoonsGegevens.objects.get(id="id")
-        FilteredData = Doelstellingen.objects.filter(persoonsgegevens_id=Persoonsgegevend_id).values_list('id', flat=True)
-        context['doelstellingen'] = FilteredData
+        context['doelstellingen'] = Doelstellingen.objects.values_list('persoonsgegevens_id', flat=True)
         return context
 
 
@@ -34,9 +32,11 @@ class DoelstellingenView(generic.DetailView):
     template_name = 'userentry/doelstellingen.html'
     context_object_name = 'doelstellingen_list'
 
-    def get_queryset(self):
-        """Return the last five published questions."""
-        return Doelstellingen.objects.order_by('activiteiten_id')
+    def get_context_data(self, **kwargs):
+        context = super(DoelstellingenView, self).get_context_data(**kwargs)
+        PK = Doelstellingen.objects.get(pk=self.kwargs.get('pk'))
+        context['doelstellingen'] = Doelstellingen.objects.filter(persoonsgegevens_id=PK.id)
+        return context
 
 
 class ScorekaartView(generic.DetailView):
