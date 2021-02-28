@@ -61,6 +61,7 @@ class Scorekaart(models.Model):
     duur = models.IntegerField(default=1)
     start_tijd = models.DateTimeField(default=0)
     eind_tijd = models.DateTimeField(default=0)
+    punten = models.IntegerField(default=1)
 
     class Meta:
         verbose_name = 'Scorekaart'

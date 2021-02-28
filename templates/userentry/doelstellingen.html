@@ -16,9 +16,9 @@
 <hr>
 
 <ul>
-    <li> <B>ID:</B> {{ doelstellingen}} </li>
-    <li> <B>xx:</B> {{ doelstellingen }} </li>
-    <li> <B>ID:</B> {{ doelstellingen}} </li>
+    {% for doelstel in doelstellingen %}
+     <li>{{ doelstel.activiteiten }} {{ doelstel.doelstelling }}x</li>
+    {% endfor %}
 
 
 </ul>

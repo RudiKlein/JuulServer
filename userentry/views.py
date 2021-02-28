@@ -6,6 +6,8 @@ from home.models import Scorekaart
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
 
+from django.db.models import Sum
+
 
 class IndexView(generic.ListView):
     template_name = 'userentry/index.html'
@@ -42,6 +44,11 @@ class DoelstellingenView(generic.DetailView):
 class ScorekaartView(generic.DetailView):
     model = Scorekaart
     template_name = 'userentry/scorekaart.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ScorekaartView, self).get_context_data(**kwargs)
+        context['scorekaart'] = Scorekaart.objects.aggregate(Sum('punten')).annotate(de)
+        return context
 
 
 def index(request):
